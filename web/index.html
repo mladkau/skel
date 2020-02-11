@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NodeDepTree</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/derevo.css">
+    <link rel="stylesheet" href="/styles/vendor/spectre/spectre.min.css">
+
+    <script src="/js/derevo.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/main.js"></script>
+
+<head>
+<body>
+    <div class="mainbox">
+
+        <div class="title">
+            <h1>NodeJS Dependency Search</h1>
+        </div>
+
+        <div class="main-input">
+            <table>
+                <tr>
+                    <td>Package name:</td>
+                    <td><input id="name" type="text" placeholder="e.g. hapi"></td>
+                </tr>
+                <tr>
+                    <td>Package version:</td>
+                    <td><input id="version" type="text"  placeholder="e.g. latest"></td>
+                </tr>
+            </table>
+            <button id="search" onclick="nds.submit()">Search</button>
+        </div>
+
+        <div id="container">
+            <div id="tree"></div>
+        </div>
+    </div>
+<script>
+    c.observe(window, "load", function () {
+        nds.init();
+    });
+</script>
+</body>
+</html>

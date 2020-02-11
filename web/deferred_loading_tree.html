@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tree with deferred data loading</title>
+    <link rel="stylesheet" href="/styles/derevo.css">
+    <link rel="stylesheet" href="/styles/vendor/spectre/spectre.min.css">
+    <script src="/js/derevo.js"></script>
+  </head>
+  <body>
+    <div id="tree"></div>
+<script>
+
+var treeData = [
+    {
+        name     : "Number 0",
+        deferred : true,
+        children : [
+            {
+                name     : "Number 0.0",
+                children : [
+                ]
+            },
+            {
+                name     : "Number 0.1",
+                children : [
+                ]
+            },
+            {
+                name     : "Number 0.2",
+                children : [
+                ]
+            }
+        ]
+    },
+    {
+        name     : "Number 1",
+        deferred : true,
+        children : [
+        ]
+    },
+    {
+        name     : "Number 2",
+        deferred : true,
+        children : [
+            {
+                name     : "Number 2.0",
+                children : [
+                ]
+            },
+            {
+                name     : "Number 2.1",
+                children : [
+                ]
+            },
+            {
+                name     : "Number 2.2",
+                children : [
+                ]
+            }
+        ]
+    }
+];
+
+var options = {
+    images : {
+        line         : "background: url(\"/img/tree_line.png\") repeat-y scroll 0px 0px transparent;",
+        minusbottom  : "background: url(\"/img/tree_minusbottom.png\") no-repeat scroll 0px 0px rgb(255, 255, 255);",
+        plusbottom   : "background: url(\"/img/tree_plusbottom.png\") repeat-y scroll 0px 0px rgb(255, 255, 255);",
+        minus        : "background: url(\"/img/tree_minus.png\") no-repeat scroll 0px 0px transparent;",
+        plus         : "background: url(\"/img/tree_plus.png\") repeat-y scroll 0px 0px transparent;",
+        joinbottom   : "background: url(\"/img/tree_joinbottom.png\") repeat-y scroll 0px 0px rgb(255, 255, 255);",
+        join         : "background: url(\"/img/tree_join.png\") repeat-y scroll 0px 0px transparent;"
+    },
+
+    buildDeferredData : function (index, children, callback) {
+        "use strict";
+        if (index.search(/^1/) !== -1) {
+            children.push({
+                name     : "Number " + index.replace(/L/,"") + ".0",
+                deferred : true,
+                children : [
+                ]
+            }, {
+                name     : "Number " + index.replace(/L/,"") + ".1",
+                deferred : true,
+                children : [
+                ]
+            });
+        }
+        callback();
+    }
+}
+
+var tree = new derevo.TreeController("tree", treeData, options);
+
+</script>
+  </body>
+</html>

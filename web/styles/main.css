@@ -1,0 +1,55 @@
+/*
+General styling
+===============
+*/
+
+body {
+  background: #FFFFFF;
+  color: #ff9f00;
+  font-family:verdana,sans-serif;
+}
+
+a { 
+  text-decoration: none
+}
+a:link {
+  color:#ff9f00;
+}
+a:visited { 
+  color:#ff9f00; 
+}
+a:active { 
+  color:#ff0000;
+} 
+
+/*
+Positioning
+===========
+*/
+
+.mainbox {
+  background: #FFFFFF;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.title h1 {
+    margin: 2em 0 2em 0;
+    width: 100vw;
+    max-width: 788px;
+}
+
+.main-input table {
+    border-style: none;
+    font-weight:bold;
+    margin: 2% auto;
+}
+
+.mainmenu td {
+    text-align : center;
+}
+
+#container {
+    margin-top: 10%;
+}

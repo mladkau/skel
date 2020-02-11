@@ -1,0 +1,25 @@
+{
+  "name": "nds",
+  "version": "1.0.0",
+  "description": "Present the dependencies of a given NPM package",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "pretest": "eslint --ignore-path .eslintignore ."
+  },
+  "author": "Matthias Ladkau",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.13.0",
+    "eslint-config-strongloop": "^2.1.0",
+    "hapi": "^18.1.0",
+    "mocha": "^5.2.0",
+    "nock": "^10.0.6",
+    "node-cache": "^4.2.0",
+    "request": "^2.88.0"
+  },
+  "dependencies": {
+    "inert": "^5.1.2"
+  }
+}
